@@ -1,0 +1,24 @@
+import random
+import string
+
+print("Password Generator")
+
+try:
+    pwd_length = int(input("How long should your password be? "))
+
+    if pwd_length <= 0:
+        print("Password length must be a positive number.")
+    else:
+        # We are combining uppercase, lowercase, digits and special symbols
+        all_chars = string.ascii_letters + string.digits + string.punctuation
+
+        # Randomly selecting characters
+        generated_pwd = ""
+        for _ in range(pwd_length):
+            generated_pwd += random.choice(all_chars)
+
+        print("Your new password is:")
+        print(generated_pwd)
+
+except ValueError:
+    print("Please enter a valid number for the length.")
