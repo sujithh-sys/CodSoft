@@ -1,0 +1,28 @@
+print("Welcome to Simple Calculator")
+
+try:
+    first_num = float(input("Enter first number: "))
+    second_num = float(input("Enter second number: "))
+    operation = input("Choose operation (+, -, *, /): ")
+
+    result = None
+
+    if operation == "+":
+        result = first_num + second_num
+    elif operation == "-":
+        result = first_num - second_num
+    elif operation == "*":
+        result = first_num * second_num
+    elif operation == "/":
+        if second_num == 0:
+            print("Cannot divide by zero!")
+        else:
+            result = first_num / second_num
+    else:
+        print("Invalid operation selected.")
+
+    if result is not None:
+        print(f"Result: {first_num} {operation} {second_num} = {result}")
+
+except ValueError:
+    print("Invalid number entered. Please run the program again.")
